@@ -63,3 +63,34 @@ As you solve each TODO in src/app.js, you aren't just writing code—you are act
 
 - Your Goal: Establish a secure, asynchronous data pipeline using Promises and async/await to handle data streams cleanly.
 
+---
+
+### 🖥️ Act III: The Persistence Layer (The Brains)
+
+
+#### 🚀 Mission 5 & 6: saveSessionToStorage(profile) & loadSessionFromStorage()
+
+> ⚠️ **The Threat** > Users leave their computers unlocked, or other scripts on the page try to scrape data. If you store sensitive credentials insecurely, it's game over.
+
+- Your Goal: Organize the browser's memory. Correctly separate what belongs in ephemeral sessionStorage versus persistent localStorage based on the threat model.
+
+---
+
+### 🖥️ Act IV: The Final Gatekeeper (The Illusion of Security)
+
+#### 🚀 Mission 7: computeAccessStatus(profile)
+
+> ⚠️ **The Threat** > The core lesson of the lab. You are writing code that checks if a user is an "admin". But wait... an attacker can literally open F12 Developer Tools, rewrite your JavaScript in the browser, and force this function to return "ACCESS GRANTED".
+
+- Your Goal: Write the cleanest, most defensive logic possible, while maintaining the engineering mindset: “This check keeps honest users out, but I must remind the backend team that they have to validate this token all over again on the server.”
+
+---
+
+### 🧪 Epilogue: The Virtual Simulation (Why We Read the Tests)
+
+The README highlights why looking at the deployment/tests matters. In our story, the autograder (npm test) is the automated cyber-range simulator. Running npm test is the equivalent of spinning up an automated AI hacker bot that fires edge cases, malformed JSON, and script injections at your code. Passing the autograder means your defenses held up against the simulation, and OmniCorp's portal is safe for another day.
+
+_Good luck, Agent_. 
+
+---
+
